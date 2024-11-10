@@ -15,9 +15,9 @@ function App() {
     <header>
   <h1>My Favorite Cities</h1>
 </header>
-<main>
+<maincontent>
   <p>I love to visit New York, Paris, and Tokyo.</p>
-</main>
+</maincontent>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
