@@ -1,5 +1,8 @@
 import WelcomeMessage from './components/WelcomeMessage'
 import { useState } from 'react'
+import Header from './Header'
+import MainContent from './MainContent'
+import Footer from './Footer'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,6 +12,12 @@ function App() {
 
   return (
     <>
+    <header>
+  <h1>My Favorite Cities</h1>
+</header>
+<main>
+  <p>I love to visit New York, Paris, and Tokyo.</p>
+</main>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -30,6 +39,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <footer>
+  <p>© 2023 City Lovers</p>
+</footer>
     </>
   )
 }
