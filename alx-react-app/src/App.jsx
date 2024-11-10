@@ -1,7 +1,7 @@
 import WelcomeMessage from '../src/components/WelcomeMessage'
 import { useState } from 'react'
-import Header from './components/header;;;
-import Footer from '../src/components/Footer'
+import Header from './components/header;'
+import Footer from '/component/footer;'
 import MainContent './components/MainContent;
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
