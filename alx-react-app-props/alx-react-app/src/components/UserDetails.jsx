@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import UserContext from '../UserContext'; // Import UserContext
 
 function UserDetails() {
-  const userData = useContext(UserContext);  // Consume userData from context
+  const userData = useContext(UserContext); // Access userData from context
 
   return (
     <div>
