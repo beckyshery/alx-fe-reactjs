@@ -8,7 +8,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
 import UserProfile from './components/UserProfile';
-
+import counter from '/components/counter';
 function App() {
   const [count, setCount] = useState(0)
   return (
