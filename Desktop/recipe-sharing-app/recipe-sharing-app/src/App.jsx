@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import RecipeList from '/recipelistcomponent'
-import AddRecipeForm from '/addrecipeform component'
+import recipelist from '/components/recipelist'
+import addrecipeform from '/components/addrecipeform'
+
 function App() {
   const [count, setCount] = useState(0)
 
