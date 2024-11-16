@@ -1,6 +1,6 @@
 // src/components/RecipeDetails.jsx
 import React from 'react';
-import { useRecipeStore } from './recipeStore';
+import { useRecipeStore } from './recipeStore.jsx';
 import EditRecipeForm from './EditRecipeForm.jsx';
 import DeleteRecipeButton from './DeleteRecipeButton.jsx/index.js';
 import { useParams } from 'react-router-dom';
