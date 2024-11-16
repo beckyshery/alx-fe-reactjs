@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "vite",  // Changed to use Vite for development
+    "dev": "vite",  
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
