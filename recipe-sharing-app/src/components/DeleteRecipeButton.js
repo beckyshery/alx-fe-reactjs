@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRecipeStore } from './recipeStore';
+import { useRecipeStore } from '../store/recipeStore';
 
 const DeleteRecipeButton = ({ recipeId, onDelete }) => {
   const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
@@ -7,13 +7,3 @@ const DeleteRecipeButton = ({ recipeId, onDelete }) => {
   const handleDelete = () => {
     deleteRecipe(recipeId);
     onDelete(); // Call onDelete to navigate back or update the UI
-  };
-
-  return (
-    <button onClick={handleDelete}>
-      Delete Recipe
-    </button>
-  );
-};
-
-export default DeleteRecipeButton;
