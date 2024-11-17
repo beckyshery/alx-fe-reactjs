@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import RecipeDetails from './components/RecipeDetails';
-import RecipeList from './components/RecipeList'; // Assuming you have a list component to show all recipes
+import RecipeDetails from './components/RecipeDetails.jsx';
+import RecipeList from './components/RecipeList.jsx'; 
 
 const App = () => {
   return (
