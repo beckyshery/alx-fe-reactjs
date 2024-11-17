@@ -8,15 +8,10 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={RecipeList} />
-        <Route path="/recipes/:id" component={RecipeDetailsWrapper} />
+        <Route path="/recipes/:id" component={RecipeDetails} />
       </Switch>
     </Router>
   );
-};
-
-const RecipeDetailsWrapper = ({ match }) => {
-  const { id } = match.params;
-  return <RecipeDetails recipeId={parseInt(id)} />;
 };
 
 export default App;
