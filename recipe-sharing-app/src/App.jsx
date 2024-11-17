@@ -1,23 +1,22 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary components
-import './App.css';
-import AddRecipeForm from './components/AddRecipeForm';
-import RecipeList from './components/RecipeList';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import RecipeList from './RecipeList';
+import RecipeDetail from './RecipeDetail'; // Import your RecipeDetail component
+import SearchBar from './SearchBar';
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <Router> {/* Wrap your app with Router */}
+    <Router>
       <div>
-        <h1>Recipe App</h1>
-        <Routes>
-          <Route path="/" element={<RecipeList />} /> {/* Route for RecipeList */}
-          <Route path="/add" element={<AddRecipeForm />} /> {/* Route for AddRecipeForm */}
-        </Routes>
+        <h1>Recipe Sharing App</h1>
+        <SearchBar />
+        <Switch>
+          <Route path="/recipes/:id" component={RecipeDetail} /> {/* Route for recipe details */}
+          <Route path="/" component={RecipeList} /> {/* Default route for recipe list */}
+        </Switch>
       </div>
     </Router>
   );
-}
+};
 
 export default App;
