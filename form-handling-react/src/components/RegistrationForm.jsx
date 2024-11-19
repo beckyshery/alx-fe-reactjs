@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 
 const RegistrationForm = () => {
   // State for controlled inputs
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
-
-  // Handle input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, email, password } = formData;
 
     // Validation check
     if (!username || !email || !password) {
@@ -26,15 +17,13 @@ const RegistrationForm = () => {
     }
 
     // Simulate form submission
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', { username, email, password });
     alert('Registration successful!');
 
     // Reset form fields
-    setFormData({
-      username: '',
-      email: '',
-      password: '',
-    });
+    setUsername('');
+    setEmail('');
+    setPassword('');
   };
 
   return (
@@ -44,8 +33,8 @@ const RegistrationForm = () => {
         <input
           type="text"
           name="username"
-          value={formData.username} // Controlled value
-          onChange={handleChange} // Update state
+          value={username} // Controlled value
+          onChange={(e) => setUsername(e.target.value)} // Update state
           required
         />
       </div>
@@ -54,8 +43,8 @@ const RegistrationForm = () => {
         <input
           type="email"
           name="email"
-          value={formData.email} // Controlled value
-          onChange={handleChange} // Update state
+          value={email} // Controlled value
+          onChange={(e) => setEmail(e.target.value)} // Update state
           required
         />
       </div>
@@ -64,8 +53,8 @@ const RegistrationForm = () => {
         <input
           type="password"
           name="password"
-          value={formData.password} // Controlled value
-          onChange={handleChange} // Update state
+          value={password} // Controlled value
+          onChange={(e) => setPassword(e.target.value)} // Update state
           required
         />
       </div>
