@@ -15,3 +15,4 @@ This project demonstrates the integration of React Query for efficient data fetc
    ```bash
    git clone https://github.com/alx-fe-reactjs/react-query-demo.git
    cd react-query-demo
+Initial content for the README file
