@@ -1,12 +1,19 @@
 import React from 'react';
-import FormikForm from './components/formikForm';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import PostsComponent from './components/PostsComponent';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <div>
-      <h1>User Registration</h1>
-      <FormikForm />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div>
+        <h1>React Query Demo</h1>
+        <PostsComponent />
+      </div>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 };
 
