@@ -11,7 +11,7 @@ describe("TodoList Component", () => {
     expect(screen.getByText('Master React')).toBeInTheDocument();
   });
 
-  test("adds a new todo item", () => {
+  test("adds a new todo ", () => {
     render(<TodoList />);
     const input = screen.getByPlaceholderText("Add a new todo");
     const addButton = screen.getByText("Add");
@@ -22,9 +22,10 @@ describe("TodoList Component", () => {
     expect(screen.getByText("Write tests")).toBeInTheDocument();
   });
 
-  test("toggles a todo item's completion status", () => {
+  test("toggles a todo as completed", () => {
     render(<TodoList />);
     const todo = screen.getByText("Learn React");
+    
     fireEvent.click(todo);
     expect(todo).toHaveStyle("text-decoration: line-through");
 
