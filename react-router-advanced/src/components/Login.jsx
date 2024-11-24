@@ -1,11 +1,20 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Login() {
-    return (
-      <div>
-        <h1>Login Page</h1>
-        <p>Simulate a login process here.</p>
-      </div>
-    );
-  }
-  
-  export default Login;
-  
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    localStorage.setItem('isAuthenticated', 'true');
+    navigate('/profile');
+  };
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+}
+
+export default Login;
