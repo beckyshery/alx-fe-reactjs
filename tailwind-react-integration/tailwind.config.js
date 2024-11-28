@@ -1,9 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"], // Specify files to scan for classes
-  darkMode: "class", // Enable class-based dark mode
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"], // Legacy equivalent to `content`
+  darkMode: "class",
   theme: {
-    extend: {}, // Use this section to extend the default theme
+    extend: {
+      // Add customizations here
+    },
   },
-  plugins: [], // Add Tailwind plugins if needed
+  variants: {
+    extend: {
+      // Add specific variants here (if necessary for your project)
+    },
+  },
+  plugins: [],
 };
