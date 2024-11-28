@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
-  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"], // Specify files to scan for classes
+  darkMode: "class", // Enable class-based dark mode
   theme: {
-    extend: {},
+    extend: {}, // Use this section to extend the default theme
   },
-  plugins: [],
-}
-
+  plugins: [], // Add Tailwind plugins if needed
+};
