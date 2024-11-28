@@ -1,4 +1,5 @@
 import React from "react";
+import UserProfile from "./components/UserProfile";
 
 function UserProfile() {
   return (
@@ -12,6 +13,7 @@ function UserProfile() {
       <p className="text-gray-600 text-base text-center">
         Developer at Example Co. Loves to write code and explore new technologies.
       </p>
+      <UserProfile />
     </div>
   );
 }
