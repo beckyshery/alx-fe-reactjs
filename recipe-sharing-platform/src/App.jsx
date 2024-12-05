@@ -1,23 +1,26 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      {/* Tailwind CSS Test Message */}
-      <div className="text-blue-500 text-center mt-10">
-        Tailwind CSS is working!
-      </div>
+    <Router>
+      <>
+        {/* Tailwind CSS Test Message */}
+        <div className="text-blue-500 text-center mt-10">
+          Tailwind CSS is working!
+        </div>
 
-      {/* Render the HomePage Component */}
-      <HomePage />
-    </>
+        {/* Routes for HomePage and RecipeDetail */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
+        </Routes>
+      </>
+    </Router>
   );
 }
 
