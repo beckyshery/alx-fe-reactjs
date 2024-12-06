@@ -1,0 +1,23 @@
+// src/components/HomePage.jsx
+import React from 'react';
+
+const HomePage = () => {
+  const dailySummary = {
+    steps: 7500,
+    caloriesBurned: 500,
+    mealsLogged: 3,
+  };
+
+  return (
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4">Daily Summary</h1>
+      <div className="bg-white p-4 shadow rounded-md">
+        <p><strong>Steps Taken:</strong> {dailySummary.steps}</p>
+        <p><strong>Calories Burned:</strong> {dailySummary.caloriesBurned}</p>
+        <p><strong>Meals Logged:</strong> {dailySummary.mealsLogged}</p>
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;

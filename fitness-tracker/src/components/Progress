@@ -1,0 +1,29 @@
+// src/components/Progress.jsx
+import React from 'react';
+
+const Progress = () => {
+  const progressData = [
+    { date: '2024-12-01', steps: 8000, caloriesBurned: 600, mealsLogged: 3 },
+    { date: '2024-12-02', steps: 10000, caloriesBurned: 700, mealsLogged: 4 },
+  ];
+
+  return (
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4">Progress</h1>
+      <div className="bg-white p-4 shadow rounded-md">
+        <ul>
+          {progressData.map((entry, index) => (
+            <li key={index} className="mb-4 border-b pb-2">
+              <p><strong>Date:</strong> {entry.date}</p>
+              <p><strong>Steps:</strong> {entry.steps}</p>
+              <p><strong>Calories Burned:</strong> {entry.caloriesBurned}</p>
+              <p><strong>Meals Logged:</strong> {entry.mealsLogged}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Progress;
