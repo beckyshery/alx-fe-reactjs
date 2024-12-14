@@ -9,6 +9,8 @@ const Search = () => {
     const [userData, setUser Data] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [page, setPage] = useState(1);
+    const [totalCount, setTotalCount] = useState(0);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -22,12 +24,28 @@ const Search = () => {
         setLoading(true);
         setError(null);
         setUser Data([]);
+        setPage(1);
 
         try {
             const data = await fetchUserData (username, location, minRepos);
             setUser Data(data.items); // Assuming the API returns an object with an 'items' array
+            setTotalCount(data.total_count);
         } catch (err) {
             setError('Looks like we can\'t find any users');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const loadMore = async () => {
+        setLoading(true);
+        try {
+            const nextPage = page + 1;
+            const data = await fetchUser Data(username, location, minRepos, nextPage);
+            setUser Data(prev => [...prev, ...data.items]);
+            setPage(nextPage);
+        } catch (err) {
+            setError('Error loading more users');
         } finally {
             setLoading(false);
         }
@@ -80,6 +98,11 @@ const Search = () => {
                             </a>
                         </div>
                     ))}
+                    {totalCount > userData.length && (
+                        <button onClick={loadMore} className="mt-4 w-full bg-blue-500 text-white p-2 rounded">
+                            Load More
+                        </button>
+                    )}
                 </div>
             )}
         </div>
