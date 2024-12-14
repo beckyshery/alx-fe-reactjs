@@ -16,11 +16,11 @@ const Search = () => {
         e.preventDefault();
         setLoading(true);
         setError(null);
-        setUser Data(null);
+        setUserData(null);
 
         try {
             const data = await fetchUserData (username); // Ensure the function name matches
-            setUser Data(data);
+            setUserData(data);
         } catch (err) {
             setError('Looks like we cant find the user');
         } finally {
