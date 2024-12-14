@@ -1,8 +1,37 @@
-# React + Vite
+# GitHub User Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The GitHub User Search Application is a React-based web application that allows users to search for GitHub profiles using the GitHub API. Users can enter a username and view basic information about the user, including their profile picture, bio, and a link to their GitHub profile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Search for GitHub users by username.
+- Display user information such as:
+  - Profile picture
+  - Username
+  - Bio
+  - Number of public repositories
+  - Link to GitHub profile
+- Responsive design for better user experience.
+
+## Technologies Used
+
+- React
+- Vite
+- Axios (for making HTTP requests)
+- GitHub API
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (Node package manager)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/alx-fe-reactjs.git
+   cd github-user-search
