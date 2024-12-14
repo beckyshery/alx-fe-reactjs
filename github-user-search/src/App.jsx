@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import UserList from './components/User _List';
 import axios from 'axios';
+import Search from './Search';
 
 function App() {
   const [users, setUsers] = useState([]);
