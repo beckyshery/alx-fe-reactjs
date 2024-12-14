@@ -1,6 +1,6 @@
-// src/components/Search.js
+// src/components/Search.jsx
 import React, { useState } from 'react';
-import { fetchUser Data } from '../services/githubService';
+import { fetchUser Data } from '../services/githubService'; // Ensure the function name matches
 
 const Search = () => {
     const [username, setUsername] = useState('');
@@ -19,10 +19,10 @@ const Search = () => {
         setUser Data(null);
 
         try {
-            const data = await fetchUserData (username);
+            const data = await fetchUser Data(username); // Ensure the function name matches
             setUser Data(data);
         } catch (err) {
-            setError('Looks like we cant find the user');
+            setError('Looks like we can\'t find the user');
         } finally {
             setLoading(false);
         }
@@ -45,8 +45,8 @@ const Search = () => {
             {error && <p>{error}</p>}
             {userData && (
                 <div>
-                    <h2>{userData.name}</h2>
-                    <img src={userData.avatar_url} alt={userData.name} width="100" />
+                    <h2>{userData.name || userData.login}</h2> {/* Display login if name is not available */}
+                    <img src={userData.avatar_url} alt={userData.name || userData.login} width="100" />
                     <p>
                         <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
                             View Profile
