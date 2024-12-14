@@ -1,6 +1,6 @@
 // src/components/Search.jsx
 import React, { useState } from 'react';
-import { fetchUserData } from '../services/githubService'; // Ensure the function name matches
+import { fetchUserData } from '../services/githubService'; // Ensure the function exists and handles additional parameters
 
 const Search = () => {
     const [username, setUsername] = useState('');
@@ -21,13 +21,14 @@ const Search = () => {
         e.preventDefault();
         setLoading(true);
         setError(null);
-        setUser Data(null);
+        setUserData(null);
 
         try {
-            const data = await fetchUserData(username, location, minRepos); // Pass additional parameters
-            setUser Data(data);
+            // Pass additional parameters to the fetch function
+            const data = await fetchUserData(username, location, minRepos);
+            setUserData(data);
         } catch (err) {
-            setError('Looks like we can\'t find the user');
+            setError("Looks like we can't find the user.");
         } finally {
             setLoading(false);
         }
