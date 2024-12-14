@@ -4,12 +4,17 @@ import { fetchUserData } from '../services/githubService'; // Ensure the functio
 
 const Search = () => {
     const [username, setUsername] = useState('');
-    const [userData, setUser Data] = useState(null);
+    const [location, setLocation] = useState(''); // New state for location
+    const [minRepos, setMinRepos] = useState(''); // New state for minimum repositories
+    const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const handleInputChange = (e) => {
-        setUsername(e.target.value);
+        const { name, value } = e.target; // Capture name and value
+        if (name === 'username') setUsername(value);
+        if (name === 'location') setLocation(value);
+        if (name === 'minRepos') setMinRepos(value);
     };
 
     const handleSubmit = async (e) => {
@@ -19,10 +24,10 @@ const Search = () => {
         setUser Data(null);
 
         try {
-            const data = await fetchUserData(username); // Ensure the function name matches
+            const data = await fetchUserData(username, location, minRepos); // Pass additional parameters
             setUser Data(data);
         } catch (err) {
-            setError('Looks like we cant find the user');
+            setError('Looks like we can\'t find the user');
         } finally {
             setLoading(false);
         }
@@ -33,10 +38,25 @@ const Search = () => {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
+                    name="username" // Added name attribute
                     value={username}
                     onChange={handleInputChange}
                     placeholder="Enter GitHub username"
                     required
+                />
+                <input
+                    type="text"
+                    name="location" // Added name attribute
+                    value={location}
+                    onChange={handleInputChange}
+                    placeholder="Enter location"
+                />
+                <input
+                    type="number"
+                    name="minRepos" // Added name attribute
+                    value={minRepos}
+                    onChange={handleInputChange}
+                    placeholder="Minimum repositories"
                 />
                 <button type="submit">Search</button>
             </form>
