@@ -1,5 +1,6 @@
 // src/components/UserCard.jsx
 import React from 'react';
+import UserCard from "./User Card";
 
 const UserCard = ({ user }) => {
   return (

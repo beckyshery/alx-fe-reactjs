@@ -1,6 +1,6 @@
 // src/components/UserList.jsx
 import React from 'react';
-import UserCard from './User Card';
+import UserList from './User List';
 
 const UserList = ({ users }) => {
   return (
