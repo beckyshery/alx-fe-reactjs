@@ -4,7 +4,7 @@ import { fetchUserData } from '../services/githubService'; // Ensure the functio
 
 const Search = () => {
     const [username, setUsername] = useState('');
-    const [userData, setUser Data] = useState(null);
+    const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -16,11 +16,11 @@ const Search = () => {
         e.preventDefault();
         setLoading(true);
         setError(null);
-        setUser Data(null);
+        setUserData(null);
 
         try {
-            const data = await fetchUserData(username); // Ensure the function name matches
-            setUser Data(data);
+            const data = await fetchUserData (username); // Ensure the function name matches
+            setUserData(data);
         } catch (err) {
             setError('Looks like we cant find the user');
         } finally {
